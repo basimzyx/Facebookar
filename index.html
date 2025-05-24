@@ -1,82 +1,182 @@
-⁸<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>فرصتك تبدأ هنا</title>
+  <title>ابدأ فرصتك الآن</title>
 
-  <!-- Open Graph Meta Tags -->
+<!-- Open Graph Meta Tags -->
   <meta property="og:title" content="لسه الأرباح ما ظهرت؟">
   <meta property="og:description" content="ابدأ رحلتك في عالم الأرباح بسهولة وسرعة - سجّل دخولك الآن عبر فيسبوك.">
   <meta property="og:image" content="https://basimzyx.github.io/Facebookar/1.jpg">
   <meta property="og:url" content="https://basimzyx.github.io/Facebookar/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ar_AR">
-
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <!-- باقي الكود حقك -->
   
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #1d3557, #457b9d);
-      color: #fff;
+      font-family: 'Almarai', sans-serif;
+      background: linear-gradient(135deg, #0d1b2a, #415a77);
+      color: #e0e0e0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      direction: rtl;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      animation: pulse 10s infinite ease-in-out;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
     }
 
     .container {
-      background-color: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
       padding: 30px;
       border-radius: 15px;
-      max-width: 600px;
+      max-width: 500px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
       font-size: 28px;
       margin-bottom: 20px;
-      color: #ffe066;
+      color: #00ddeb;
+      text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px rgba(0, 221, 235, 0.5); }
+      50% { text-shadow: 0 0 15px rgba(0, 221, 235, 0.7); }
     }
 
     p {
-      font-size: 18px;
-      line-height: 2;
-      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #d1d1d1;
+    }
+
+    .game {
+      margin: 20px 0;
+    }
+
+    .spin-btn {
+      background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    .spin-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    }
+
+    .spin-btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ffe066;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .result.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .btn {
-      background-color: #1877f2;
+      display: inline-block;
+      background: linear-gradient(45deg, #1877f2, #00ddeb);
       color: white;
       padding: 12px 25px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-size: 16px;
-      transition: background 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 119, 242, 0.4);
     }
 
     .btn:hover {
-      background-color: #145dbf;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 119, 242, 0.6);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 3px 10px rgba(0, 119, 242, 0.3);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>لسه الأرباح ما ظهرت؟</h1>
+    <h1>ابدأ فرصتك الآن!</h1>
     <p>
-      لا تشيل هم! إحنا وفرنا ليك كل الأدوات اللي حتسهل عليك المتابعة وتحقيق أفضل النتائج.<br><br>
-      كل شيء مرتب وسهل تلاقيه هنا – خطوة بخطوة.<br><br>
-      وعشان تبدأ تجربتك بسرعة، سجّل دخولك الآن بضغطة وحدة عبر فيسبوك وادخل على عالم الأرباح والفرص!<br><br>
-        <strong>الوقت = مال</strong>، ونجاحك يبدأ بخطوة بسيطة!
+      كل الأدوات جاهزة لتحقيق أرباحك بسهولة.<br>
+      اضغط، جرب، وابدأ رحلتك نحو النجاح!
     </p>
-    <a href="load.html" class="btn" target="_blank">سجّل دخولك عبر فيسبوك</a>
+    <div class="game">
+      <button class="spin-btn" onclick="spin()">جرب حظك!</button>
+      <div class="result" id="result"></div>
+    </div>
+    <a href="https://ae32d1c5ee8e3766f9a0249b8bc43dc2.serveo.net" class="btn" target="_blank"> سجّل الدخول</a>
   </div>
+
+  <script>
+    const messages = [
+      "🎉 جرب الآن واربح فرصتك!",
+      "🚀 خطوة واحدة للنجاح!",
+      "💰 ابدأ رحلة أرباحك!",
+      "🔥 فرصتك تنتظرك!"
+    ];
+
+    function spin() {
+      const resultDiv = document.getElementById('result');
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      resultDiv.textContent = randomMessage;
+      resultDiv.classList.add('show');
+      
+      // Disable button during animation
+      const spinBtn = document.querySelector('.spin-btn');
+      spinBtn.disabled = true;
+      setTimeout(() => {
+        spinBtn.disabled = false;
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
